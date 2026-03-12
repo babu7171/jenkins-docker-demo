@@ -1,9 +1,11 @@
 version: "3.9"
 
 services:
-  web:
-    build: .
-    container_name: ngnix_site
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend_app
     ports:
      - "9091:80"
     restart: always
