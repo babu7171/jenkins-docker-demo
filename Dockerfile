@@ -2,11 +2,12 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
+# Copy only package.json and package-lock.json from backend
+COPY backend/package*.json ./
 RUN npm install
 
-COPY . .
+# Copy backend code
+COPY backend/. .
 
-EXPOSE 9091
-
+EXPOSE 3000
 CMD ["node", "server.js"]
