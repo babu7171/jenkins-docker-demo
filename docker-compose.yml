@@ -6,11 +6,3 @@ services:
     container_name: backend-app
     ports:
       - "9091:9091"
-
-  frontend:
-    build: ./frontend
-    container_name: frontend-app
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
